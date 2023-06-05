@@ -1,73 +1,196 @@
-.container{
-display: grid;
-justify-content: center;
-align-items: center;
-grid-template-areas: 
-"header header header header header"
-"aside secao1 secao1 secao1 secao1"
-"aside secao2 secao2 secao2 secao2"
-"footer footer footer footer footer";
+* {
+    margin: 0;
+    padding: 0;
 }
 
-header{
-    grid-area: header;
-    width: 1000px;
-    background-color: red;
-    height: 100px;
+body {
+    margin: 0;
+}
+
+nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
     justify-content: space-around;
-    border: solid 5px black;
+    align-items: center;
+    background: #23232e;
+    height: 8vh;
 }
 
-aside{
-    grid-area: aside;
-    background-color: yellow;
-    height: 410px;
-    width: 200px;
+main {
+    background: url(img.webp)no-repeat center center;
+    background-size: cover;
+    height: 92vh;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+    color: #d61d73;
+    font-size: 20px;
+    letter-spacing: 15px;
+    animation: lighting 1.4s linear infinite;
+}
+
+.menu1 {
+    display: none;
+    cursor: pointer;
+}
+
+.menu1 div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+}
+
+.submenu {
+    font-size: 16px;
+    padding: 10px;
+    color: #23232e;
+    align-content: end;
+    margin-left: -40px;
+    padding-top: 10px;
+    display: none;
+    position: absolute;
+}
+
+.submenu a {
+    font-size: 16px;
+    padding: 10px;
+    color: #fff;
+    align-content: end;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 0px;
+    list-style: none;
+    position: relative;
+    float: left;
+}
+
+.nav-list a {
+    font-size: 17px;
+    color: #fff;
+    padding: 15px 19px;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.nav-list li:hover>a {
+    color: #fff;
+}
+
+.nav-list li:hover>.submenu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
-    border: solid 5px black;
 }
 
-.secao1{
-    height: 200px;
-    width: 790px;
-    background-color: yellow;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
-    border: solid 5px black;
+.nav-list li a:hover {
+    background: #23232e;
+    color: #fff;
+    -moz-box-shadow: 0 3px 10px 0 #CCC;
+    -webkit-box-shadow: 0 3px 10px 0 #ccc;
+    text-shadow: 0px 0px 5px #fff;
+    -webkit-border-radius: 25px;
 }
 
-.secao2{
-    height: 201px;
-    width: 790px;
-    background-color: yellow;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
-    border: solid 5px black;
+.nav-list li ul {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    background-color: #23232e;
+    display: none;
 }
 
-.footer{
-    grid-area: footer;
-    background-color: red;
-    height: 50px;
-    border: solid 5px black;
+@media(max-width: 999px) {
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
 
-}
-.quadro {
-    height: 50px;
-    width: 100px;
-    background-color: blue;
-    border: solid 5px black;
-    
+    .nav-list {
+        margin-left: 0;
+    }
+
+    .menu1 {
+        display: block;
+
+    }
 }
 
+@keyframes lighting {
+    0% {
+        color: #fff;
+        text-shadow: none;
+    }
+
+    90% {
+        color: #fff;
+        text-shadow: none;
+    }
+
+    100% {
+        color: #61058b;
+        text-shadow: 0 0 7px #fff, 0 0 50px #e5e7e9;
+    }
+}
+
+ul li:nth-child(1) {
+    animation-delay: 0
+}
+
+ul li:nth-child(2) {
+    animation-delay: 0.1s
+}
+
+ul li:nth-child(3) {
+    animation-delay: 0.2s
+}
+
+ul li:nth-child(4) {
+    animation-delay: 0.3s
+}
+
+ul li:nth-child(5) {
+    animation-delay: 0.4s
+}
+
+ul li:nth-child(6) {
+    animation-delay: 0.5s
+}
+
+ul li:nth-child(7) {
+    animation-delay: 0.6s
+}
+
+ul li:nth-child(8) {
+    animation-delay: 0.7s
+}
